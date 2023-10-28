@@ -36,7 +36,11 @@ const PhotoSearch = () => {
     setPage(1);
     searchPhotos();
   };
-
+  const handleEnterKey = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
   const handleScroll = () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight) {
@@ -60,6 +64,7 @@ const PhotoSearch = () => {
           className='search-input'
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
+          onKeyDown={handleEnterKey}
         />
         <button className='search-btn' onClick={handleSearch}>Search</button>
       </div>

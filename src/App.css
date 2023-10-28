@@ -22,10 +22,13 @@
   --main-color: #323232;
 }
 
+.hidden{
+  display: none;
+}
+
 .photo-grid{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px;
+  column-count: 3;
+  column-gap: 30px;
   padding: 0 52px;
 }
 .item{
@@ -35,7 +38,8 @@
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   cursor: pointer;
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: 32px;
 }
 
 .item img{
