@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# IA02 - React with API - 20126062
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Develop a website with the following features:
+- Implement the ability to search for photos and display images that match the search text. (3 points)
+- Allow users to scroll down to load additional photos dynamically. (3 points)
+- Show a loading indication to inform users when the website is waiting for a response from the photo search API. (3 points)
+- Deploy the website to a public host for accessibility to a broader audience. (1 point)
 
 ## Available Scripts
 
