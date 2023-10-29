@@ -36,11 +36,13 @@ const PhotoSearch = () => {
     setPage(1);
     searchPhotos();
   };
+
   const handleEnterKey = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
     }
   };
+  
   const handleScroll = () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight) {
@@ -54,7 +56,7 @@ const PhotoSearch = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
-
+  // chưa handle được giữ scroll position
   return (
     <div>
       <div className='search-bar'>
@@ -68,21 +70,23 @@ const PhotoSearch = () => {
         />
         <button className='search-btn' onClick={handleSearch}>Search</button>
       </div>
-      <div className="photo-grid">
-        {photos.map((photo) => (
-          <div key={photo.id} className='item'>
-            <img src={photo.urls.small} alt={photo.alt_description} loading="lazy" />
-          </div>
-        ))}
-      </div>
-      {loading &&
+      {loading ? (
         <div className='loader'>
           <div className="loader-1">
             <div className="loader-2"></div>
             <div className="loader-3"></div>
             <div className="loader-4"></div>
           </div>
-        </div>}
+        </div>
+      ) : (
+        <div className="photo-grid">
+          {photos.map((photo) => (
+            <div key={photo.id} className='item'>
+              <img src={photo.urls.small} alt={photo.alt_description} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
